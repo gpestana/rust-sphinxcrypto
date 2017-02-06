@@ -5,6 +5,10 @@
 extern crate lioness;
 extern crate rustc_serialize;
 
+pub use node::SphinxParams;
+//pub use crypto_primitives::{GroupCurve25519, SphinxDigest};
+
+
 /// i am a protocol agnostic trait representing mix network addresses.
 pub trait MixAddr {
 
@@ -16,7 +20,7 @@ pub trait MixPKI {
     fn set(&mut self, node_id: [u8; 16], public_key: [u8; 32], address: MixAddr);
 
     /// get the public key of a node
-    fn get(&self, node_id) -> [u8; 32];
+    fn get(&self, node_id: [u8; 16]) -> [u8; 32];
 
     /// return all the node IDs
     fn identities(&self) -> Vec<[u8; 16]>;
@@ -42,5 +46,13 @@ pub struct SphinxHeader {
 
 /// i am a factory, i build Sphinx headers
 pub struct SphinxHeaderFactory {
-   
+    pub params: SphinxParams,
+    pub pki: MixPKI,
+}
+
+impl SphinxHeaderFactory {
+    //pub fn build_sphinx_header() -> SphinxHeader {
+    //  SphinxHeader{
+    //    }
+    //}
 }
