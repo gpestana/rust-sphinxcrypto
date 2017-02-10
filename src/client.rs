@@ -53,8 +53,10 @@ pub struct SphinxHeaderFactory {
 }
 
 impl SphinxHeaderFactory {
-    //pub fn build_sphinx_header() -> SphinxHeader {
-    //  SphinxHeader{
-    //    }
-    //}
+
+    pub fn build_sphinx_header(route: Vec<String>, destination_type: u8, message_id: [u8; 16]) { //-> SphinxHeader {
+
+        //SphinxHeader{
+        //}
+    }
 }
