@@ -11,7 +11,8 @@ pub use node::SphinxParams;
 
 /// i am a protocol agnostic trait representing mix network addresses.
 pub trait MixAddr {
-
+    fn network(self) -> String;
+    fn address(self) -> String;
 }
 
 /// mix network public key infrastructure trait
