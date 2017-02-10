@@ -48,7 +48,8 @@ pub struct SphinxHeader {
 /// i am a factory, i build Sphinx headers
 pub struct SphinxHeaderFactory {
     pub params: SphinxParams,
-    pub pki: MixPKI,
+    pub pki: Box<MixPKI>,
+    pub entropy_iter: Box<Iterator<Item = u8>>,
 }
 
 impl SphinxHeaderFactory {
